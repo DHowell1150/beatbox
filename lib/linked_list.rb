@@ -6,9 +6,14 @@ class LinkedList
   end
 
   def append(data)
-    @head = Node.new(data)
-  end
+    if @head == nil
+      @head = Node.new(data)
+    elsif @head.is_a? Node
+      @head.next_node = Node.new(data)
+    end
 
+  end
+##I was limited here because I have to pause here and work with my mentor. I know the code doesn't run but I'm at an impass anyhow. I'll turn it in here but still want to finish at least these parts out with Jonathan.  
   def count 
     if @head 
       1
@@ -24,8 +29,4 @@ class LinkedList
       nil
     end
   end
-
-
-  #def append
-
 end

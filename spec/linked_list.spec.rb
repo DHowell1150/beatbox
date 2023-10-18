@@ -10,32 +10,32 @@ RSpec.describe LinkedList do
     expect(list).to be_a(LinkedList)
   end
 
-  #is the "describe" here accurate?
   it "instantiates head as nil" do
     list = LinkedList.new
-    
     expect(list.head).to eq(nil)
   end
 
-  #help with "describe"
   it "appends node" do
     list = LinkedList.new
-
-    expect(list.head).to eq(nil)
     
     list.append('doop')
 
     expect(list.head.data).to eq("doop")
 
     expect(list.head.next_node).to eq(nil)
+  end
 
-    expect(list.count).to eq(1)
+  it "counts the number of nodes" do
+    list = LinkedList.new
+    list.append('doop')
+    list.append('deep')
 
-    expect(list.to_string).to eq('doop')
+    expect(list.count).to eq(2)
   end
 end
+    # expect(list.count).to eq(1)
 
-#append - creates a new node with the data that we pass into this method and adds it to the end of the linked list
+  #   expect(list.to_string).to eq('doop')
 
 #count - tells us how many nodes are in the list
 
